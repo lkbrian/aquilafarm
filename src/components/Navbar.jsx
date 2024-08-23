@@ -60,6 +60,7 @@ function Navbar() {
           lineHeight={"40px"}
           color={"#fff"}
           p={"5px"}
+          display={{ base: "none", lg: "flex" }}
           w={"110px"}
         >
           Get in Touch
@@ -74,26 +75,30 @@ function Navbar() {
               variant="outline"
             />
             <MenuList>
-              <MenuItem>
-                <NavLink className="links" to="/">
-                  Home
-                </NavLink>
+              <MenuItem as={NavLink} className="links" to="/">
+                Home
+              </MenuItem>
+              <MenuItem as={NavLink} className="links" to="/about">
+                About Us
+              </MenuItem>
+              <MenuItem as={NavLink} className="links" to="/contact">
+                Contact Us
+              </MenuItem>
+              <MenuItem as={NavLink} className="links" to="/services">
+                Services
               </MenuItem>
               <MenuItem>
-                <NavLink className="links" to="/about">
-                  About Us
-                </NavLink>
-              </MenuItem>
-              <MenuItem>
-                <NavLink className="links" to="/contact">
-                  Contact Us
-                </NavLink>
-              </MenuItem>
-              <MenuItem>
-                {" "}
-                <NavLink className="links" to="/services">
-                  Services
-                </NavLink>
+                <Box
+                  bg={"#B87333"}
+                  cursor={"pointer"}
+                  lineHeight={"40px"}
+                  color={"#fff"}
+                  p={"5px"}
+                  display={{ base: "flex", lg: "none" }}
+                  w={"100%"}
+                >
+                  Get in Touch
+                </Box>
               </MenuItem>
             </MenuList>
           </Menu>
