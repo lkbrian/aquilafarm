@@ -1,0 +1,49 @@
+       <Box
+          w={{ base: "100%", lg: "50%", xl: "40%" }}
+          minH={{ base: "auto", md: "650px" }}
+          overflow={"hidden"}
+        >
+          <Image
+            src={aqcoffee}
+            alt="Mission, Vision, and Core Values Image"
+            borderRadius="md"
+          />
+        </Box>
+        <Box
+          flex={".5"}
+          overflow={"hidden"}
+          shadow="0 2px 8px rgba(0, 0, 0, 0.1)"
+        >
+          <Image
+            src={aqcoffee}
+            alt="Mission, Vision, and Core Values Image"
+            borderRadius="md"
+          />
+        </Box>{" "}
+
+
+                  <Box
+            bg="white"
+            w="300px"
+            h="auto"
+            p="4"
+            boxShadow="lg"
+            borderRadius="md"
+          >
+            <Image
+              w="100%"
+              h="150px"
+              objectFit="cover"
+              src={arabica}
+              alt="Arabica Coffee Beans"
+            />
+            <Heading size="md" mt="4">
+              Arabica Green Coffee Beans
+            </Heading>
+            <Text mt="2">
+              Arabica beans are prized for their smooth, sweet flavor with hints
+              of fruit and floral notes. Grown at high altitudes, they offer a
+              refined taste with balanced acidity. Available in AA (highest
+              grade) and AB (balanced flavor) grades.
+            </Text>
+          </Box>
