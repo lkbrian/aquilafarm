@@ -1,7 +1,18 @@
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  IconButton,
+} from "@chakra-ui/react";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { FiShoppingCart } from "react-icons/fi";
+import { HamburgerIcon } from "@chakra-ui/icons";
+
 
 function Navbar() {
   return (
@@ -27,7 +38,7 @@ function Navbar() {
       >
         AquilaFarm
       </Heading>
-      <Box display="flex" gap={8}>
+      <Box gap={8} display={{ base: "none", lg: "flex" }}>
         <NavLink className="links" to="/">
           Home
         </NavLink>
@@ -41,6 +52,7 @@ function Navbar() {
           Services
         </NavLink>
       </Box>
+
       <Flex alignItems={"center"} gap={"20px"}>
         <Box
           bg={"#B87333"}
@@ -53,6 +65,39 @@ function Navbar() {
           Get in Touch
         </Box>
         <Box size={"22px"} color={"#B87333"} as={FiShoppingCart} />
+        <Box display={{ base: "flex", lg: "none" }}>
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              aria-label="Options"
+              icon={<HamburgerIcon />}
+              variant="outline"
+            />
+            <MenuList>
+              <MenuItem>
+                <NavLink className="links" to="/">
+                  Home
+                </NavLink>
+              </MenuItem>
+              <MenuItem>
+                <NavLink className="links" to="/about">
+                  About Us
+                </NavLink>
+              </MenuItem>
+              <MenuItem>
+                <NavLink className="links" to="/contact">
+                  Contact Us
+                </NavLink>
+              </MenuItem>
+              <MenuItem>
+                {" "}
+                <NavLink className="links" to="/services">
+                  Services
+                </NavLink>
+              </MenuItem>
+            </MenuList>
+          </Menu>
+        </Box>
       </Flex>
     </Flex>
   );

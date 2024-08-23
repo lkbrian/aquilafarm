@@ -108,7 +108,7 @@ function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <Box position="relative" h="60vh" m="10px">
+      <Box position="relative" h="60vh" mt={"70px"} m="10px">
         {/* Background Image */}
         <Image
           src={coffee_bg}
@@ -135,22 +135,29 @@ function Home() {
           justifyContent="center"
           alignItems="center"
           h="100%"
-          p="20px"
+          p={{ base: "2px", md: "20px" }}
           color="#fff"
           textAlign="center"
           backdropFilter={"blur(1px)"}
         >
           <Box maxW="60%">
-            <Heading as="h2" fontFamily={"title"} fontSize="4xl">
+            <Heading
+              as="h2"
+              fontFamily={"title"}
+              fontSize={{ base: "26px", md: "2xl", lg: "4xl" }}
+            >
               Sourcing the World's Finest Coffee Beans
             </Heading>
             <Text mt="4" fontSize="lg">
               We specialize in exporting premium coffee directly from our farm
               to your cup. Experience the rich flavors of nature. Our coffee
               farm is located in the lush, fertile lands where coffee grows
-              abundantly. We are committed to sustainable farming practices and
-              ensuring that our beans are of the highest quality. From our hands
-              to yours, we guarantee a coffee experience like no other.
+              abundantly.{" "}
+              <Box display={{ base: "none", md: "inline" }}>
+                We are committed to sustainable farming practices and ensuring
+                that our beans are of the highest quality. From our hands to
+                yours, we guarantee a coffee experience like no other.
+              </Box>
             </Text>
           </Box>
         </Flex>
@@ -189,7 +196,7 @@ function Home() {
             to delivering only the highest quality coffee to our global
             clientele. Our commitment to excellence extends beyond our product
             to the communities we serve and the environment we strive to
-            protect. Through sustainable farming practices, fair trade
+            protect.<Box display={{ base: "none", md: "inline" }}> Through sustainable farming practices, fair trade
             initiatives, and active participation in community development, we
             aim to create a positive impact both locally and internationally.
             Our focus on sustainability is reflected in our alignment with key
@@ -198,7 +205,7 @@ function Home() {
             education, and provide better livelihoods through job creation. With
             every bean we export, Aquila Farm Ltd carries forward a legacy of
             quality, integrity, and a deep respect for the people and land that
-            make our coffee exceptional.
+            make our coffee exceptional.</Box>
           </Text>
         </Box>
         <Box
