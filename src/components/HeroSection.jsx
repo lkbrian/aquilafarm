@@ -112,7 +112,7 @@ const HeroSection = () => {
       role="group"
       _hover={{
         ".arrow": {
-          display: "block",
+          display: {base:"none",md:'block'},
         },
       }}
     >

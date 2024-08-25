@@ -21,6 +21,8 @@ const Footer = () => {
         justifyContent="space-evenly"
         flexDirection={{ base: "column", md: "row" }}
         alignItems={{ base: "flex-start", md: "center" }}
+        gap={'20px'}
+        ml={{base:"50px",md: 0}}
       >
         {/* Contact Us Section */}
         <Box>
@@ -38,7 +40,7 @@ const Footer = () => {
           <Stack spacing={2}>
             <Flex align="center">
               <Icon as={FaPhoneAlt} color="#B87333" mr={2} />
-              <Text color="#B87333">0419 623 040</Text>
+              <Text color="#B87333">+254 719 623 040</Text>
             </Flex>
             <Flex align="center">
               <Icon as={FaMapMarkerAlt} color="#B87333" mr={2} />
@@ -107,7 +109,7 @@ const Footer = () => {
 
       {/* Footer Bottom Section */}
       <Flex
-        justifyContent="space-evenly"
+        justifyContent={{base:"center" ,md:"space-evenly"}}
         bg={"#B87333"}
         p={"6px"}
         flexDirection={{ base: "column", md: "row" }}
@@ -115,8 +117,8 @@ const Footer = () => {
         mt={8}
         pt={4}
       >
-        <Text fontFamily={"body"} fontWeight={'400'} fontSize={"14px"}>
-          © 2024 Coffee & Nut Trading. All Rights Reserved. Website design by lkbian
+        <Text fontFamily={"body"} textAlign={'center'} fontWeight={'400'} fontSize={"14px"}>
+          © 2024 Aquilafarm. All Rights Reserved. Website design by lkbian
         </Text>
         <HStack>
           <Link href="/terms">Terms of Use |</Link>
