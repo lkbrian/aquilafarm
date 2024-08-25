@@ -5,6 +5,9 @@ const theme = extendTheme({
     heading: `'Nunito'`,
     body: `'Nunito'`,
     title: `'Merriweather'`,
+    playfair: `'Playfair Display'`,
+    anton: "Anton",
+    cinzel:"Cinzel",
   },
 });
 

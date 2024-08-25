@@ -7,6 +7,7 @@ import {
   MenuList,
   MenuItem,
   IconButton,
+  Text,
 } from "@chakra-ui/react";
 import React from "react";
 import { NavLink } from "react-router-dom";
@@ -29,15 +30,20 @@ function Navbar() {
       // borderColor="#E4E4E4"
       bg={"#fff"}
     >
-      <Heading
-        fontFamily={"title"}
-        as="h4"
-        size="md"
-        color={"#B87333"}
-        fontWeight={"bold"}
-      >
-        AquilaFarm
-      </Heading>
+      <Box textAlign={'center'}>
+        <Heading
+          color={"#B87333"}
+          as="h4"
+          size="md"
+          fontWeight={"bold"}
+          fontFamily={"cinzel"}
+        >
+          Aquilafarm
+        </Heading>
+        <Text color={"#B87333"} letterSpacing={1} fontSize={"12px"}>
+          Certified coffee exporter
+        </Text>
+      </Box>
       <Box gap={8} display={{ base: "none", lg: "flex" }}>
         <NavLink className="links" to="/">
           Home

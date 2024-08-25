@@ -1,26 +1,24 @@
 import {
   Box,
-  Flex,
-  Text,
-  Heading,
   Button,
+  Flex,
+  Heading,
   Image,
-  Stack,
-  VStack,
-  UnorderedList,
   ListItem,
+  Text,
+  UnorderedList
 } from "@chakra-ui/react";
 import React from "react";
-import Navbar from "../components/Navbar";
+import arabica from "../assets/arabica.jpeg";
+import roasted from "../assets/roasted.jpeg";
+import robusta from "../assets/robusta.jpeg";
+import farmone from "../assets/farm-01.jpeg";
 import Footer from "../components/Footer";
-import dairyImage from "../assets/ccow.jpeg";
-import coffee_bg from "../assets/coffebg.jpeg";
-import aqcoffee from '../assets/aqcoffee.jpg'
-import product_bg from '../assets/product_bg.jpeg'
-import arabica from "../assets/arabica.jpeg"
-import robusta from "../assets/robusta.jpeg"
-import roasted from "../assets/roasted.jpeg"
+import HeroSection from "../components/HeroSection";
+import Navbar from "../components/Navbar";
 import SdgCards from "../components/SdgCards";
+import { FaArrowCircleRight } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 
 function Home() {
@@ -108,59 +106,8 @@ function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <Box position="relative" h="60vh" mt={"70px"} m="10px">
-        {/* Background Image */}
-        <Image
-          src={coffee_bg}
-          alt="Coffee Farm"
-          objectFit="cover"
-          w="100%"
-          h="100%"
-          position="absolute"
-          top="0"
-          left="0"
-          zIndex={-1}
-        />
-        <Box
-          position="absolute"
-          top="0"
-          left="0"
-          w="100%"
-          h="100%"
-          bg="rgba(0, 0, 0, 0.6)"
-          zIndex={-1}
-        />
-        {/* Text Content */}
-        <Flex
-          justifyContent="center"
-          alignItems="center"
-          h="100%"
-          p={{ base: "2px", md: "20px" }}
-          color="#fff"
-          textAlign="center"
-          backdropFilter={"blur(1px)"}
-        >
-          <Box maxW="60%">
-            <Heading
-              as="h2"
-              fontFamily={"title"}
-              fontSize={{ base: "26px", md: "2xl", lg: "4xl" }}
-            >
-              Sourcing the World's Finest Coffee Beans
-            </Heading>
-            <Text mt="4" fontSize="lg">
-              We specialize in exporting premium coffee directly from our farm
-              to your cup. Experience the rich flavors of nature. Our coffee
-              farm is located in the lush, fertile lands where coffee grows
-              abundantly.{" "}
-              <Box display={{ base: "none", md: "inline" }}>
-                We are committed to sustainable farming practices and ensuring
-                that our beans are of the highest quality. From our hands to
-                yours, we guarantee a coffee experience like no other.
-              </Box>
-            </Text>
-          </Box>
-        </Flex>
+      <Box position="relative" h="95vh" mt={"70px"} overflow={"hidden"}>
+        <HeroSection />
       </Box>
 
       <Flex
@@ -196,16 +143,20 @@ function Home() {
             to delivering only the highest quality coffee to our global
             clientele. Our commitment to excellence extends beyond our product
             to the communities we serve and the environment we strive to
-            protect.<Box display={{ base: "none", md: "inline" }}> Through sustainable farming practices, fair trade
-            initiatives, and active participation in community development, we
-            aim to create a positive impact both locally and internationally.
-            Our focus on sustainability is reflected in our alignment with key
-            United Nations Sustainable Development Goals (SDGs), as we work
-            tirelessly to promote environmental stewardship, support local
-            education, and provide better livelihoods through job creation. With
-            every bean we export, Aquila Farm Ltd carries forward a legacy of
-            quality, integrity, and a deep respect for the people and land that
-            make our coffee exceptional.</Box>
+            protect.
+            <Box display={{ base: "none", md: "inline" }}>
+              {" "}
+              Through sustainable farming practices, fair trade initiatives, and
+              active participation in community development, we aim to create a
+              positive impact both locally and internationally. Our focus on
+              sustainability is reflected in our alignment with key United
+              Nations Sustainable Development Goals (SDGs), as we work
+              tirelessly to promote environmental stewardship, support local
+              education, and provide better livelihoods through job creation.
+              With every bean we export, Aquila Farm Ltd carries forward a
+              legacy of quality, integrity, and a deep respect for the people
+              and land that make our coffee exceptional.
+            </Box>
           </Text>
         </Box>
         <Box
@@ -277,13 +228,7 @@ function Home() {
           </UnorderedList>
         </Box>
       </Flex>
-      <Box
-        position="relative"
-        m="10px"
-        p="20px"
-        bg="#001219" // Change this to your preferred background color
-        color="white"
-      >
+      <Box position="relative" m="10px" p="20px" bg="#0f343f" color="white">
         <Flex
           h="100%"
           textAlign="center"
@@ -309,7 +254,6 @@ function Home() {
                 bg="white"
                 maxW="400px"
                 h="auto"
-                p="4"
                 boxShadow="lg"
                 borderRadius="md"
                 mb={8}
@@ -321,17 +265,97 @@ function Home() {
                   objectFit="cover"
                   src={product.imageSrc}
                   alt={product.altText}
+                  borderTopRadius={"md"}
                 />
-                <Heading size="md" mt="4">
+                <Heading
+                  size="md"
+                  mt="4"
+                  fontFamily={"title"}
+                  letterSpacing={1}
+                >
                   {product.name}
                 </Heading>
-                <Text mt="2">{product.description}</Text>
+                <Text p={4} pt={1} textAlign={"start"} mt="2">
+                  {product.description}
+                </Text>
               </Box>
             ))}
           </Flex>
         </Flex>
       </Box>
-      <SdgCards />
+      <Flex
+        direction={{ base: "column-reverse", lg: "row" }}
+        align="center"
+        justify="space-between"
+      >
+        {/* Text Content */}
+        <Box
+          flex="1"
+          display={'flex'}
+          flexDir={'column'}
+          textAlign={{ base: "center", lg: "right" }}
+          pr={{ base: "0", md: "30px" }}
+          py="20px"
+          letterSpacing={1}
+          maxW={{base:'100%',lg:'50%'}}
+          alignContent={{base:"center"}}
+          justifyContent={{base:"center"}}
+        >
+          <Heading
+            as="h1"
+            fontSize={{ base: "2xl", md: "48px" }}
+            mb="20px"
+            fontWeight="bold"
+            color="gray.800"
+            textTransform={"capitalize"}
+            letterSpacing={"2px"}
+            // lineHeight={'45px'}
+            fontFamily={"title"}
+          >
+            How aquilafarm <br /> coffee farming contributes <br /> to the UN
+            SDGs
+          </Heading>
+          <Text fontSize="16px" color="gray.600" mb="20px">
+            Read more about how our work contributes to the United Nations
+            Sustainable Development Goals
+          </Text>
+          <Button
+            fontWeight={"400"}
+            letterSpacing={1}
+            textAlign="center"
+            alignItems="center"
+            display="flex"
+            justifyContent="space-between"
+            w={"auto"}
+            bg="#0f343f"
+            mt={"20px"}
+            outline="none"
+            border="1px"
+            borderColor={"#fff"}
+            color={"#fff"}
+            p="25px"
+            borderRadius=".2rem"
+            fontSize={"md"}
+            gap={"20px"}
+            alignSelf={{base:'center',lg:'flex-end'}}
+          >
+            <NavLink>Read more</NavLink>
+            <FaArrowCircleRight fontSize={"18px"} />
+          </Button>
+        </Box>
+
+        {/* Image Content */}
+        <Box flex="0.8" p={"10px"} mt={{ base: "30px", md: "0" }}>
+          <Image
+            src={farmone} // Replace with your image
+            alt="Women working in the coffee farm"
+            objectFit="cover"
+            borderRadius="10px"
+            w="100%"
+            h="100%"
+          />
+        </Box>
+      </Flex>
       <Footer />
     </div>
   );
