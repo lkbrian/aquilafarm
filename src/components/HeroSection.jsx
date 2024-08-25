@@ -62,12 +62,14 @@ const HeroSection = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 1500,
+    speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 6000,
     arrows: true,
+    fade:true,
+    cssEase: "linear",
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
   };
@@ -80,7 +82,17 @@ const HeroSection = () => {
           Sourcing the Finest <br /> Coffee Beans
         </>
       ),
-      text: "We specialize in exporting premium coffee directly from our farm to your cup. Experience the rich flavors of nature. Our coffee farm is located in the lush, fertile lands where coffee grows abundantly.",
+      text: (
+        <>
+          We specialize in exporting premium coffee directly from our farm to
+          your cup. Experience the rich flavors of nature.
+          <Text display={{ base: "none", md: "inline" }}>
+            {" "}
+            Our coffee farm is located in the lush, fertile lands where coffee
+            grows abundantly.
+          </Text>
+        </>
+      ),
       textAlign: "start",
       img: `${slidefive}`,
       button_text: "Explore more",
@@ -92,14 +104,36 @@ const HeroSection = () => {
           Sustainable Farming, <br /> Unmatched Flavor
         </>
       ),
-      text: "At the heart of our coffee is a commitment to the environment. Our sustainable farming methods not only protect the planet but also bring out the finest flavors in our beans. We believe in doing right by nature while delivering an extraordinary coffee experience.",
+      text: (
+        <>
+          At the heart of our coffee is a commitment to the environment. Our
+          sustainable farming methods not only protect the planet but also bring
+          out the finest flavors in our beans.
+          <Text display={{ base: "none", md: "inline" }}>
+            {" "}
+            We believe in doing right by nature while delivering an
+            extraordinary coffee experience.
+          </Text>
+        </>
+      ),
       textAlign: "start",
       img: `${slidethree}`,
       button_text: "Get quote",
     },
     {
       heading: "Crafting the Perfect Cup of Coffee",
-      text: "Every cup of our coffee tells a story — a story of craftsmanship, quality, and passion. We work with local farmers, ensuring the best practices are used to bring you coffee that's rich, smooth, and unforgettable. Elevate your coffee moments with us.",
+      text: (
+        <>
+          Our coffee tells a story — a story of craftsmanship, quality, and
+          passion. We work with local farmers, ensuring the best practices are
+          used{" "}
+          <Text display={{ base: "none", md: "inline" }}>
+            {" "}
+            to bring you coffee that's rich, smooth, and unforgettable. Elevate
+            your coffee moments with us.
+          </Text>
+        </>
+      ),
       textAlign: "start",
       img: `${slideseven}`,
       button_text: "About us",
@@ -112,15 +146,16 @@ const HeroSection = () => {
       role="group"
       _hover={{
         ".arrow": {
-          display: {base:"none",md:'block'},
+          display: { base: "none", md: "block" },
         },
       }}
+      style={{ touchAction: "none" }}
     >
       <Slider {...settings}>
         {slides.map((slide, index) => (
           <Box
             key={index}
-            h={"95vh"}
+            h={{ base: "50vh", md: "92vh" }}
             position="relative"
             bgImage={`url(${slide.img})`}
             bgSize="cover"

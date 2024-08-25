@@ -106,7 +106,12 @@ function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <Box position="relative" h="95vh" mt={"70px"} overflow={"hidden"}>
+      <Box
+        position="relative"
+        h={{ base: "50vh", md: "92vh" }}
+        mt={"70px"}
+        overflow={"hidden"}
+      >
         <HeroSection />
       </Box>
 
@@ -291,15 +296,15 @@ function Home() {
         {/* Text Content */}
         <Box
           flex="1"
-          display={'flex'}
-          flexDir={'column'}
+          display={"flex"}
+          flexDir={"column"}
           textAlign={{ base: "center", lg: "right" }}
           pr={{ base: "0", md: "30px" }}
           py="20px"
           letterSpacing={1}
-          maxW={{base:'100%',lg:'50%'}}
-          alignContent={{base:"center"}}
-          justifyContent={{base:"center"}}
+          maxW={{ base: "100%", lg: "50%" }}
+          alignContent={{ base: "center" }}
+          justifyContent={{ base: "center" }}
         >
           <Heading
             as="h1"
@@ -337,7 +342,7 @@ function Home() {
             borderRadius=".2rem"
             fontSize={"md"}
             gap={"20px"}
-            alignSelf={{base:'center',lg:'flex-end'}}
+            alignSelf={{ base: "center", lg: "flex-end" }}
           >
             <NavLink>Read more</NavLink>
             <FaArrowCircleRight fontSize={"18px"} />
