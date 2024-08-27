@@ -149,7 +149,6 @@ const HeroSection = () => {
           display: { base: "none", md: "block" },
         },
       }}
-      style={{ touchAction: "none" }}
     >
       <Slider {...settings}>
         {slides.map((slide, index) => (

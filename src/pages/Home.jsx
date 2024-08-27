@@ -126,8 +126,8 @@ function Home() {
           shadow="0 2px 8px rgba(0, 0, 0, 0.1)"
           flex="1"
           py={4}
-          px={6}
-          borderWidth={2}
+          px={{base:2,md:6}}
+          border={'2px'}
           borderColor="gray"
           borderRadius="0.7rem"
           maxW={{ base: "100%", lg: "50%" }}
