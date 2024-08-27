@@ -233,7 +233,7 @@ function Home() {
           </UnorderedList>
         </Box>
       </Flex>
-      <Box position="relative" m="10px" p="20px" bg="#0f343f" color="white">
+      <Box position="relative" p="20px" bg="#0f343f" color="white">
         <Flex
           h="100%"
           textAlign="center"
